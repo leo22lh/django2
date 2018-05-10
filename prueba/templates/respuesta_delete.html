@@ -1,0 +1,8 @@
+{% extends 'layout/layout.html'%}
+{% block content %}
+
+<form method="post">
+  {% csrf_token %}
+  <button type='submit'>Eliminar</button>
+</form>
+{% endblock %}

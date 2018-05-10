@@ -1,0 +1,23 @@
+{% extends 'layout/layout.html'%}
+{% block content %}
+  <table>
+    <thead>
+      <tr>
+        <td>asunto</td>
+        <td>descripcion</td>
+        <td>fecha_publicaion</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for pregunta in preguntas %}
+        <tr>
+          <td>{{pregunta.asunto}}</td>
+          <td>{{pregunta.descripcion}}</td>
+          <td>{{pregunta.fecha_publicacion}}</td>
+          <td><a href="{% url 'pregunta_editar' pregunta.id %}">Editar</a></td>
+          <td><a href="{% url 'pregunta_eliminar' pregunta.id %}">Eliminar</a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'layout/layout.html'%}
+{% block content %}
+  <table>
+    <thead>
+      <tr>
+        <td>pregunta/td>
+        <td>Contenido}</td>
+        <td>Mejor_Respuesta</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for respuesta in object_list %}
+        <tr>
+          <td>{{respuesta.pregunta}}</td>
+          <td>{{respuesta.contenido}}</td>
+          <td>{{respuesta.mejor_respuesta}}</td>
+          <td><a href="{% url 'respuesta_editar' respuesta.id %}">Editar</a></td>
+          <td><a href="{% url 'respuesta_eliminar' respuesta.id %}">Eliminar</a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
